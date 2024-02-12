@@ -51,13 +51,12 @@ int main(void) {
             break;
         }
 
-        // Snake
+        // Update
         for (int i = score; i > 0; i--) {
             snake[i] = snake[i - 1];
         }
 
-        snake[0].x = position.x;
-        snake[0].y = position.y;
+        snake[0] = position;
 
         position.x += dir.x;
         position.y += dir.y;
@@ -68,14 +67,20 @@ int main(void) {
             food.y = rand() % 20;
         }
 
+        // Drawing
         erase();
-        mvaddch(food.y, food.x * 2, "@");
+        mvaddch(food.y, food.x * 2, '@');
 
         // Draw snake
         for (int i = 0; i < score; i++) {
             mvaddch(snake[i].y, snake[i].x * 2, '*');
+            if (snake[i].y == position.y && snake[i].x == position.x) {
+                endwin();
+                printf("Game over!\nScore: %d\n", score);
+                return 0;
+            }
         }
-        mvaddch(position.y, position.x * 2, "0");
+        mvaddch(position.y, position.x * 2, '0');
 
         usleep(125000);
         print_border(&screen);

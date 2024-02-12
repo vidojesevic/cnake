@@ -1,4 +1,4 @@
-# Tribal Window Manager
+# Cnake - Snake in C
 
 # Compilers flags
 CC = gcc
@@ -8,7 +8,7 @@ CFLAGS = -g -Wall -Wextra -pedantic -std=c2x
 SRC_DIR = src
 BUILD_DIR = build
 INCLUDE_DIR = include
-SNAKE = cnake
+SNAKE = snake
 
 # Source files
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
