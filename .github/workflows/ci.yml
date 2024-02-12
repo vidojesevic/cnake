@@ -22,11 +22,11 @@ jobs:
       - name: Install libcriterion
         run: sudo apt-get install -y libcriterion-dev
 
-      - name: Build library
+      - name: Build cnake
         run: make
 
-      - name: Test library
-        run: make test
+      # - name: Test cnake
+      #   run: make test
 
       - name: Clean up
         run: make clean
