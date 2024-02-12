@@ -6,9 +6,9 @@
 typedef struct screen {
     int x;
     int y;
-} Screen;
+} ScreenX;
 
 WINDOW *init_screen(void);
-void print_border(Screen *screen);
+void print_border(ScreenX *screen);
 
 #endif

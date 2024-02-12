@@ -1,14 +1,14 @@
 #define SNAKE_H_IMPLEMENTATION
 #ifdef SNAKE_H_IMPLEMENTATION
 
-typedef struct position {
-    int x;
-    int y;
-} Position;
+#include <curses.h>
+#include "screen.h"
 
-typedef struct food {
+typedef struct vec2 {
     int x;
     int y;
-} Food;
+} vec2;
+
+void randomize_food(vec2 *food);
 
 #endif

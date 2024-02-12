@@ -8,7 +8,7 @@ CFLAGS = -g -Wall -Wextra -pedantic -std=c2x
 SRC_DIR = src
 BUILD_DIR = build
 INCLUDE_DIR = include
-SNAKE = snake
+SNAKE = cnake
 
 # Source files
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
@@ -25,7 +25,7 @@ TEST_OBJ_FILES := $(patsubst $(TEST_DIR)/%.c,$(BUILD_DIR)/%.o,$(TEST_SRC_FILES))
 all: $(BUILD_DIR)/$(SNAKE)
 
 $(BUILD_DIR)/$(SNAKE): $(OBJ_FILES) $(BUILD_DIR)/main.o
-	$(CC) $(CFLAGS) $^ -o $@ -lncurses
+	$(CC) $(CFLAGS) $^ -o $@ -lncurses -lc
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c -I$(INCLUDE_DIR) $< -o $@

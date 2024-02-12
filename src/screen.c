@@ -10,7 +10,7 @@ WINDOW *init_screen() {
     return window;
 }
 
-void print_border(Screen *screen) {
+void print_border(ScreenX *screen) {
     // Corners
     mvprintw(0, 0, "+");
     mvprintw(0, screen->x - 1, "+");
