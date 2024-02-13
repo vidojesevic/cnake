@@ -15,3 +15,8 @@ void randomize_food(vec2 *food) {
     food->x = x;
     food->y = y;
 }
+
+void gameover(int score) {
+    endwin();
+    printf("Game over!\nScore: %d\n", score);
+}

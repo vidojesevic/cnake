@@ -1,5 +1,4 @@
 #include "../include/screen.h"
-#include <math.h>
 #include <curses.h>
 
 WINDOW *init_screen() {
@@ -19,13 +18,13 @@ void print_border(ScreenX *screen, int score) {
     mvprintw(screen->y - 1, screen->x - 1, "+");
 
     char title[32];
-    sprintf(title, "]>Cnake<[Score: %d<[", score);
+    sprintf(title, "]>Cnake<[Score: %d", score);
     int length = sizeof(title)/sizeof(title[0]);
     // Top border
     for (int i = 1; i < screen->x - 1; ++i) {
-        if (i == screen->x/2 - (int)(length / 2)) {
+        if (i == screen->x/2 - (length / 2)) {
             mvprintw(0, i, title);
-            i += length;
+            i += length / 2;
             continue;
         }
         mvprintw(0, i, "-");

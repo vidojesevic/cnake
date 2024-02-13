@@ -9,6 +9,6 @@ typedef struct screen {
 } ScreenX;
 
 WINDOW *init_screen(void);
-void print_border(ScreenX *screen);
+void print_border(ScreenX *screen, int score);
 
 #endif

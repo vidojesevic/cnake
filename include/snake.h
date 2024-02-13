@@ -10,5 +10,6 @@ typedef struct vec2 {
 } vec2;
 
 void randomize_food(vec2 *food);
+void gameover(int score);
 
 #endif
