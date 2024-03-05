@@ -12,8 +12,10 @@ int score = 0;
 vec2 snake[256];
 void print_version(const char *version);
 void handle_pause(bool paused);
+void printMenu();
 
 int main(int argc, char *argv[]) {
+    if (argc == 1) printMenu();
     if (argc > 1 && (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0)) {
         print_version(VERSION);
     } else if (strcmp(argv[1], "-s") == 0 && argc == 3) {
@@ -116,5 +118,10 @@ int main(int argc, char *argv[]) {
 void print_version(const char *version) {
     printf("Cnake | Simple terminal snake game in C\nVersion: %s-stable\nCreator: Vidoje Sevic\n", version);
     printf("Usage: ./build/snake -s normal/fast/faster\n");
+    exit(EXIT_FAILURE);
+}
+
+void printMenu() {
+    printf("Usage: \n\t./build/snake -s normal|fast|faster\n");
     exit(EXIT_FAILURE);
 }
